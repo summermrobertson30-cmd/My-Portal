@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Work Portal</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        background: "#0B1220",
+        panel: "#111827",
+        primary: "#2563EB",
+        accent: "#F97316"
+      }
+    }
+  }
+}
+</script>
+
+</head>
+
+<body class="bg-background text-white">
+
+<!-- BUSINESS BAR -->
+<div class="bg-panel border-b border-gray-700 p-3 flex gap-4">
+
+<input class="bg-background p-2 rounded w-full" placeholder="Business Name">
+<input class="bg-background p-2 rounded w-full" placeholder="Contact Name">
+<input class="bg-background p-2 rounded w-full" placeholder="Phone">
+
+</div>
+
+<!-- NAVBAR -->
+<div class="bg-panel border-b border-gray-700 p-3 flex gap-6 text-sm">
+
+<button>Home</button>
+<button>Main Script</button>
+<button>Audit Script</button>
+<button>Texts</button>
+<button>Call Reports</button>
+<button>Next Actions</button>
+<button>Calendar</button>
+
+</div>
+
+<!-- CONTENT -->
+<div class="p-6 grid grid-cols-3 gap-6">
+
+<!-- LEFT PANEL -->
+<div class="col-span-2 bg-panel p-6 rounded-xl">
+
+<h2 class="text-lg mb-4">Script</h2>
+
+<div class="space-y-4">
+
+<div class="p-4 bg-background rounded">
+<strong>Step 1</strong><br>
+Hi is this [Business]? It's Summer calling from RSA Marketing.
+</div>
+
+<div class="p-4 bg-background rounded">
+<strong>Step 2</strong><br>
+I was just looking at your Google listing and noticed something that might be costing enquiries.
+</div>
+
+<div class="p-4 bg-background rounded">
+<strong>Step 3</strong><br>
+Would you like me to quickly show you what it is?
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT PANEL -->
+<div class="bg-panel p-6 rounded-xl">
+
+<h2 class="mb-4">Notes</h2>
+
+<textarea class="w-full h-40 bg-background p-3 rounded"></textarea>
+
+<button class="bg-primary w-full mt-4 p-2 rounded">
+Save Notes
+</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
