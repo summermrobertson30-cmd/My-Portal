@@ -5,28 +5,36 @@
 <title>RSA Work Portal</title>
 
 <link rel="stylesheet" href="style.css">
+<script src="data.js"></script>
+<script src="app.js"></script>
 
 </head>
 
 <body>
 
-<div class="topbar">
+<div id="loginScreen" class="login">
 
-<input placeholder="Business Name">
-<input placeholder="Contact Name">
-<input placeholder="Phone">
+<h1>RSA Portal</h1>
+
+<input id="username" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Unlock</button>
+
+<p id="loginError"></p>
 
 </div>
+
+<div id="portal" class="hidden">
 
 <div class="navbar">
 
 <button onclick="showPage('dashboard')">Dashboard</button>
-<button onclick="showPage('mainScript')">Main Script</button>
-<button onclick="showPage('auditScript')">Audit Script</button>
-<button onclick="showPage('texts')">Texts</button>
-<button onclick="showPage('reports')">Call Reports</button>
-<button onclick="showPage('actions')">Next Actions</button>
+<button onclick="showPage('script')">Main Script</button>
+<button onclick="showPage('audit')">Audit Script</button>
+<button onclick="showPage('tracker')">Lead Tracker</button>
 <button onclick="showPage('calendar')">Calendar</button>
+<button onclick="showPage('templates')">Templates</button>
 
 </div>
 
@@ -40,25 +48,10 @@
 
 <div class="stats">
 
-<div class="card">
-Calls Today
-<h2>0</h2>
-</div>
-
-<div class="card">
-Audits Booked
-<h2>0</h2>
-</div>
-
-<div class="card">
-Sales Closed
-<h2>0</h2>
-</div>
-
-<div class="card">
-Follow Ups
-<h2>0</h2>
-</div>
+<div class="card">Calls Today <h2 id="calls">0</h2></div>
+<div class="card">Audits Booked <h2 id="audits">0</h2></div>
+<div class="card">Follow Ups <h2>0</h2></div>
+<div class="card">Sales Closed <h2>0</h2></div>
 
 </div>
 
@@ -73,92 +66,51 @@ Follow Ups
 
 <!-- MAIN SCRIPT -->
 
-<div id="mainScript" class="page hidden">
+<div id="script" class="page hidden">
 
 <h1>Main Call Script</h1>
 
-<div id="scriptBox"></div>
+<div class="scriptBox" id="scriptText"></div>
 
-<button onclick="prevStep()">Back</button>
-<button onclick="nextStep()">Next</button>
+<button onclick="prevScript()">Back</button>
+<button onclick="nextScript()">Next</button>
 
 </div>
 
 <!-- AUDIT SCRIPT -->
 
-<div id="auditScript" class="page hidden">
+<div id="audit" class="page hidden">
 
-<h1>Audit Script</h1>
+<h1>Audit Call Script</h1>
 
-<div id="auditBox"></div>
+<div class="scriptBox" id="auditText"></div>
 
 <button onclick="prevAudit()">Back</button>
 <button onclick="nextAudit()">Next</button>
 
 </div>
 
-<!-- TEXTS -->
+<!-- LEAD TRACKER -->
 
-<div id="texts" class="page hidden">
+<div id="tracker" class="page hidden">
 
-<h1>Text Templates</h1>
+<h1>Lead Tracker</h1>
 
-<div class="card">
+<input id="leadName" placeholder="Business Name">
+<input id="leadPhone" placeholder="Phone">
 
-Cold Follow Up
-
-<button onclick="copyText('t1')">Copy</button>
-
-<p id="t1">
-
-Hi it's Summer from RSA Marketing.
-
-Just following up on our call earlier about helping improve your Google presence and enquiries.
-
-Let me know if you'd like me to show you the quick audit I mentioned.
-
-</p>
-
-</div>
-
-</div>
-
-<!-- REPORTS -->
-
-<div id="reports" class="page hidden">
-
-<h1>Call Report</h1>
-
-<input placeholder="Business">
-
-<select>
+<select id="leadStatus">
 
 <option>No Answer</option>
-<option>Call Back</option>
-<option>Booked Audit</option>
-<option>Not Interested</option>
+<option>Follow Up</option>
+<option>Audit Booked</option>
 <option>Closed</option>
 
 </select>
 
-<textarea placeholder="Notes"></textarea>
+<button onclick="addLead()">Add Lead</button>
 
-<button>Save</button>
-
-</div>
-
-<!-- ACTIONS -->
-
-<div id="actions" class="page hidden">
-
-<h1>Next Actions</h1>
-
-<ul>
-
-<li>Call back roofing leads</li>
-<li>Send audit to plumbing lead</li>
-
-</ul>
+<ul id="leadList"></ul>
 
 </div>
 
@@ -172,9 +124,43 @@ Let me know if you'd like me to show you the quick audit I mentioned.
 
 </div>
 
+<!-- TEMPLATES -->
+
+<div id="templates" class="page hidden">
+
+<h1>Message Templates</h1>
+
+<div class="card">
+
+Cold WhatsApp After Call
+
+<button onclick="copy('t1')">Copy</button>
+
+<p id="t1">
+Hi [Name] — it’s Summer from RSA Marketing.
+As promised here are 2 quick wins I noticed for your business.
+If you'd like I can send the plan and options.
+</p>
+
 </div>
 
-<script src="app.js"></script>
+<div class="card">
+
+No Reply Follow Up
+
+<button onclick="copy('t2')">Copy</button>
+
+<p id="t2">
+Quick one — do you want more visibility on Google this month or are you happy where things are?
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
