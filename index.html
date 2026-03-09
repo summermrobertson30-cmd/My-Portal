@@ -1,93 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Work Portal</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
+<title>RSA Work Portal</title>
 
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        background: "#0B1220",
-        panel: "#111827",
-        primary: "#2563EB",
-        accent: "#F97316"
-      }
-    }
-  }
-}
-</script>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-<body class="bg-background text-white">
+<body>
 
-<!-- BUSINESS BAR -->
-<div class="bg-panel border-b border-gray-700 p-3 flex gap-4">
+<div class="topbar">
 
-<input class="bg-background p-2 rounded w-full" placeholder="Business Name">
-<input class="bg-background p-2 rounded w-full" placeholder="Contact Name">
-<input class="bg-background p-2 rounded w-full" placeholder="Phone">
-
-</div>
-
-<!-- NAVBAR -->
-<div class="bg-panel border-b border-gray-700 p-3 flex gap-6 text-sm">
-
-<button>Home</button>
-<button>Main Script</button>
-<button>Audit Script</button>
-<button>Texts</button>
-<button>Call Reports</button>
-<button>Next Actions</button>
-<button>Calendar</button>
+<input placeholder="Business Name">
+<input placeholder="Contact Name">
+<input placeholder="Phone">
 
 </div>
 
-<!-- CONTENT -->
-<div class="p-6 grid grid-cols-3 gap-6">
+<div class="navbar">
 
-<!-- LEFT PANEL -->
-<div class="col-span-2 bg-panel p-6 rounded-xl">
-
-<h2 class="text-lg mb-4">Script</h2>
-
-<div class="space-y-4">
-
-<div class="p-4 bg-background rounded">
-<strong>Step 1</strong><br>
-Hi is this [Business]? It's Summer calling from RSA Marketing.
-</div>
-
-<div class="p-4 bg-background rounded">
-<strong>Step 2</strong><br>
-I was just looking at your Google listing and noticed something that might be costing enquiries.
-</div>
-
-<div class="p-4 bg-background rounded">
-<strong>Step 3</strong><br>
-Would you like me to quickly show you what it is?
-</div>
+<a href="dashboard.html">Dashboard</a>
+<a href="main-script.html">Main Script</a>
+<a href="audit-script.html">Audit Script</a>
+<a href="texts.html">Texts</a>
+<a href="reports.html">Call Reports</a>
+<a href="actions.html">Next Actions</a>
+<a href="calendar.html">Calendar</a>
 
 </div>
 
-</div>
+<div class="container">
 
-<!-- RIGHT PANEL -->
-<div class="bg-panel p-6 rounded-xl">
+<h1>Welcome</h1>
 
-<h2 class="mb-4">Notes</h2>
-
-<textarea class="w-full h-40 bg-background p-3 rounded"></textarea>
-
-<button class="bg-primary w-full mt-4 p-2 rounded">
-Save Notes
-</button>
-
-</div>
+<p>Select a tool from the menu.</p>
 
 </div>
 
